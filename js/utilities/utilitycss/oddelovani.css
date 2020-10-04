@@ -1,0 +1,16 @@
+.cely-oddelovac {
+  display: flex;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+.oddeleni-utility {
+  flex: 1;
+  background: #737373;
+  height: 2px;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+.oddeleni-utility-prava, .oddeleni-utility-leva {
+  margin-left: 16px;
+  margin-right: 16px;
+}

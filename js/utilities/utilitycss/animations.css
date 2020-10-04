@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@keyframes fade-in {
+  0% {opacity: 0}
+  25% {opacity: 0.25}
+  50% {opacity: 0.5}
+  75% {opacity: 0.75}
+  100% {opacity: 1}
+}
+.class-fade-in {
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-out {
+  0% {opacity: 1}
+  25% {opacity: 0.75}
+  50% {opacity: 0.5}
+  75% {opacity: 0.25}
+  100% {display: none}
+}
+.class-fade-out {
+  animation-name: fade-out;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}

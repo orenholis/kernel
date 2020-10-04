@@ -1,0 +1,49 @@
+.cely-automatic-input {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  right: 45%;
+  width: 350Px;
+  height: 50px;
+  background: #595959;
+  border-radius: 6px;
+}
+.cely-automatic-input-input {
+  height: 30Px;
+  padding-left: 2px;
+  background: #4d4d4d;
+  margin-left: 15px;
+  margin-top: 7px;
+  border-radius: 7px;
+  border: 2px solid #737373;
+  outline: none;
+  width: 233px;
+}
+.cely-automatic-button {
+  height: 30px;
+  text-align: center;
+  background: #4CAF50;
+  outline: none;
+  margin-left: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 7px;
+}
+.cely-automatic-button-vetsi {
+  width: 80px;
+}
+.cely-automatic-button-mensi {
+  width: 60px;
+}
+.cely-automatic-button-cancel {
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  background: black;
+  color: white;
+  outline: none;
+  margin-left: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 7px;
+}

@@ -1,0 +1,35 @@
+.prekryvAlert {
+  background: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.samotny-alert {
+  margin: 0 auto;
+  background: white;
+  height: 200pX;
+  width: 300px;
+  color: black;
+  border-radius: 2px;
+}
+.nadpis-alert {
+ text-decoration: underline;
+ font-size: larger;
+ text-align: center;
+ background-color: lightgrey;
+}
+.obsah-alertu {
+ text-align: center;
+}
+.ok-btn-alert {
+  width: 60px;
+  height: 35px;
+  border: lime 1px solid;
+  border-radius: 5px;
+  margin-top: 80px;
+  margin-left: 120px;
+  background: lightgreen;
+  color: white;
+}

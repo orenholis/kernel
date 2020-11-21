@@ -32,8 +32,7 @@ export default class DialogUtil extends React.Component {
             title: this.props.title,
             cancelButton: this.props.cancelButton === false ? false : true,
             endButton: this.props.endButton
-
-        }
+        };
         console.log(this.props);
 
         this.handleChange = this.itemValueChange.bind(this);

@@ -10,16 +10,16 @@ function vygenerujInput(parametr){
     let inviteBtn = "";
     createCrossCancelBtn(formularCely, formularCely, { className: "class-fade-out", duration: 1500 });
 
-    if(parametr == "invite"){
+    if(parametr === "invite"){
       inviteBtn = createElement({type: "button", parent: formularCely, class: "cely-automatic-button", text: "Invite", classB: "cely-automatic-button-mensi"});
       formularInput.placeholder = "Invite someone...";
-    } else if(parametr == "join"){
+    } else if(parametr === "join"){
       inviteBtn = createElement({type: "button", parent: formularCely, class: "cely-automatic-button", text: "Join server", classB: "cely-automatic-button-vetsi"});
       formularInput.placeholder = "Join server...";
     }
 
     formularInput.addEventListener("keyup", (e) => {
-      if (e.key == "Enter") {
+      if (e.key === "Enter") {
         inviteBtn.click();
       }
     });
@@ -28,9 +28,9 @@ function vygenerujInput(parametr){
       if(formularInput.value.length <= 2){
         alert("Pole musí obsahovat alespoň 3 znaky")
       } else if(formularInput.value.length >= 3){
-        if(document.getElementById("username-name").innerHTML == formularInput.value){
+        if(document.getElementById("username-name").innerHTML === formularInput.value){
           return alert("Nemůžete si přidat sebe");
-        } else if(existenceGroupFriend(formularInput.value) == false){
+        } else if(existenceGroupFriend(formularInput.value) === false){
           return alert("Kamaráda " + formularInput.value + " máte už přidaného!");
         }
 

@@ -30,10 +30,9 @@ export default class DialogUtil extends React.Component {
                 name6: this.props.name6 ? this.props.name6 : "",
             },
             title: this.props.title,
-            cancelButton: this.props.cancelButton === false ? false : true,
+            cancelButton: this.props.cancelButton !== false,
             endButton: this.props.endButton
         };
-        console.log(this.props);
 
         this.handleChange = this.itemValueChange.bind(this);
         this.openForm = this.openLoginForm.bind(this);
@@ -65,7 +64,7 @@ export default class DialogUtil extends React.Component {
             [this.state.displayName.name4 ? this.state.displayName.name4 : null]: this.state.item.value4,
             [this.state.displayName.name5 ? this.state.displayName.name5 : null]: this.state.item.value5,
             [this.state.displayName.name6 ? this.state.displayName.name6 : null]: this.state.item.value6,
-        }
+        };
         this.state.onChange(data);
         this.setState({status: false});
     };
@@ -76,37 +75,37 @@ export default class DialogUtil extends React.Component {
                 <Dialog open={this.state.status}>
                     <DialogTitle>{this.state.title}</DialogTitle>
                     <DialogContent>
-                        <div className={ this.state.displayName.name1 ? "visible" : "invisible"}>
+                        <div className={ this.state.displayName.name1 !== "" ? "visible" : "invisible"}>
                             <DialogContentText>{this.state.displayName.name1}</DialogContentText>
                             <TextField id="form-dialog-user-password" value={this.state.item.value1} onChange={this.handleChange} name="value1"
                                        autoFocus
                             />
                         </div>
-                        <div className={ this.state.displayName.name2 ? "visible" : "invisible"}>
+                        <div className={ this.state.displayName.name2 !== "" ? "visible" : "invisible"}>
                             <DialogContentText>{this.state.displayName.name2}</DialogContentText>
                             <TextField id="form-dialog-user-password" value={this.state.item.value2} onChange={this.handleChange} name="value2"
                                        autoFocus
                             />
                         </div>
-                        <div className={ this.state.displayName.name3 ? "visible" : "invisible"}>
+                        <div className={ this.state.displayName.name3 !== "" ? "visible" : "invisible"}>
                             <DialogContentText>{this.state.displayName.name3}</DialogContentText>
                             <TextField id="form-dialog-user-password" value={this.state.item.value3} onChange={this.handleChange} name="value3"
                                        autoFocus
                             />
                         </div>
-                        <div className={ this.state.item.displayName4 ? "visible" : "invisible"}>
+                        <div className={ this.state.displayName.name4 !== "" ? "visible" : "invisible"}>
                             <DialogContentText>{this.state.displayName.name4}</DialogContentText>
                             <TextField id="form-dialog-user-password" value={this.state.item.value4} onChange={this.handleChange} name="value4"
                                        autoFocus
                             />
                         </div>
-                        <div className={ this.state.displayName.name5 ? "visible" : "invisible"}>
+                        <div className={ this.state.displayName.name5 !== "" ? "visible" : "invisible"}>
                             <DialogContentText>{this.state.displayName.name5}</DialogContentText>
                             <TextField id="form-dialog-user-password" value={this.state.item.value5} onChange={this.handleChange} name="value5"
                                        autoFocus
                             />
                         </div>
-                        <div className={ this.state.displayName.name6 ? "visible" : "invisible"}>
+                        <div className={ this.state.displayName.name6 !== "" ? "visible" : "invisible"}>
                             <DialogContentText>{this.state.displayName.name6}</DialogContentText>
                             <TextField id="form-dialog-user-password" value={this.state.item.value6} onChange={this.handleChange} name="value6"
                                        autoFocus
@@ -120,7 +119,7 @@ export default class DialogUtil extends React.Component {
                             </Button>
                         </div>
                         <Button onClick={this.valueSend} color="primary">
-                            {this.state.endButton ? this.state.endButton : "err"}
+                            {this.state.endButton ? this.state.endButton : null}
                         </Button>
                     </DialogActions>
                 </Dialog>

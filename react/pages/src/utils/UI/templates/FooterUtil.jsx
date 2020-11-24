@@ -11,8 +11,10 @@ export default class FooterUtil extends React.Component {
 
     render() {
         return (
-            <div>
-
+            <div className="footer-util">
+                <div className="footer-util-center">
+                    {this.props.children}
+                </div>
             </div>
         );
     }

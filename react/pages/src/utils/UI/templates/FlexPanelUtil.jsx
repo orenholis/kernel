@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class HeaderUtil extends React.Component {
+export default class FlexPanelUtil extends React.Component {
     constructor(props) {
         super(props);
 
@@ -15,10 +15,8 @@ export default class HeaderUtil extends React.Component {
 
     render() {
         return (
-            <div className="header-util">
-                <div className="header-util-center">
-                    {this.props.children}
-                </div>
+            <div className="flex-util">
+                {this.props.children}
             </div>
         );
     }

@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from 'classnames';
 
 export default class ImageUtil extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ export default class ImageUtil extends React.Component {
 
         this.state = {
             href: this.props.href,
-            clase: this.props.class
+            class: classNames(this.props.class)
         };
     }
 

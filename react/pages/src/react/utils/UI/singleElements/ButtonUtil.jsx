@@ -1,7 +1,9 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import classNames from 'classnames';
 
+/**
+ *  ButtonUtil is preseted button, but can be chnaged
+ */
 export default class ButtonUtil extends React.Component {
     constructor(props) {
         super(props);
@@ -19,8 +21,7 @@ export default class ButtonUtil extends React.Component {
             text: this.props.text ? this.props.text : "Insert your text",
             function: this.props.function ? this.props.function : this.null(),
             size: this.props.size ? this.props.size : "medium",
-            variant: this.props.variant ? this.props.variant : "outlined",
-            class: classNames(this.props.class)
+            variant: this.props.variant ? this.props.variant : "outlined"
         }
     }
 
@@ -30,7 +31,7 @@ export default class ButtonUtil extends React.Component {
 
     render() {
         return (
-                <Button onClick={this.state.function} color={this.state.color} size={this.state.size} variant={this.state.variant} className={this.state.class}>
+                <Button onClick={this.state.function} color={this.state.color} size={this.state.size} variant={this.state.variant}>
                     {this.state.text}
                 </Button>
         );

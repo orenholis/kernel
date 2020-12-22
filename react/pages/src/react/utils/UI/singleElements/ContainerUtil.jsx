@@ -13,15 +13,55 @@ export default class ContainerUtil extends React.Component {
 
     render() {
         return (
-            <div className={this.state.class}>
+            <div>
+                {this.state.mode === "boxes" ?
+                    <ModeBoxes children={this.props.children} link={this.props.link} class={this.props.class} pictureLink={this.props.pictureLink}/> :
+                    null
+                }
                 {this.state.mode === "title" ?
-                    <ModeTitle childern={this.props.children} gitLink={this.props.gitLink} urlLink={this.props.urlLink} contentText={this.props.contentText}/>:
+                    <div className={this.state.class}>
+                        <ModeTitle childern={this.props.children} gitLink={this.props.gitLink} urlLink={this.props.urlLink} contentText={this.props.contentText} />
+                    </div> :
                     null
                 }
                 {this.state.mode === undefined ?
-                    this.props.children :
+                    <div className={this.state.class}>
+                        {this.props.children}
+                    </div> :
                     null
                 }
+            </div>
+        );
+    }
+}
+
+class ModeBoxes extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            link: this.props.link ? this.props.link : "",
+            class: classNames(this.props.class, "container-util-mode-boxes")
+        };
+    }
+
+
+
+    render() {
+        return(
+            <div>
+                <a href={this.state.link} className="container-util-mode-boxes-link">
+                    <div className={this.state.class}>
+                        <div className="container-util-mode-boxes-picture-all">
+                            <img className="container-util-mode-boxes-picture" src={this.props.pictureLink} />
+                        </div>
+                        <div className="container-util-mode-boxes-text-all">
+                            <p className="container-util-mode-boxes-text">
+                                {this.props.children}
+                            </p>
+                        </div>
+                    </div>
+                </a>
             </div>
         );
     }
@@ -46,7 +86,7 @@ class ModeTitle extends React.Component{
             return console.log("In container util with project text missing.");
         }
         this.setState({
-           mode: "content"
+            mode: "content"
         });
     }
 

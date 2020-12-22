@@ -48,7 +48,7 @@
 }
 
 /** Footer */
-.footer-util {
+.footer-util-absolute {
     width: 100%;
     background: #737373;
     position: absolute;
@@ -57,7 +57,17 @@
     right: 0;
     margin: 0;
     border-top: 2px solid #0000b3;
-    background: black;
+}
+
+.footer-util-classic {
+    width: 100%;
+    background: #737373;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    border-top: 2px solid #0000b3;
 }
 
 .footer-util-center {

@@ -11,10 +11,19 @@ export default class FooterUtil extends React.Component {
 
     render() {
         return (
-            <div className="footer-util">
-                <div className="footer-util-center">
-                    {this.props.children}
-                </div>
+            <div>
+                {this.props.type ?
+                    <div className={"footer-util-" + this.props.type}>
+                        <div className="footer-util-center">
+                            {this.props.children}
+                        </div>
+                    </div> :
+                    <div className="footer-util-absolute">
+                        <div className="footer-util-center">
+                            {this.props.children}
+                        </div>
+                    </div>
+                }
             </div>
         );
     }

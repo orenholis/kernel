@@ -1,5 +1,6 @@
 import React from "react";
 import DialogUtil from "../UI/templates/DialogUtil.jsx";
+import HeaderUtil from "../UI/templates/HeaderUtil.jsx";
 
 export default class LoginPresetUtil extends React.Component {
     constructor(props){
@@ -21,11 +22,13 @@ export default class LoginPresetUtil extends React.Component {
         })
             .then(resp => resp.json())
             .then((response)=>{
-                if(response === true){
+                if(response.godMode){
+                    this.state.onChange({registration: true, name: data.name, godMode: "God"});
+                } else if(response === true){
                     alert("Login sucessfuly");
-                    this.state.onChange({status: "loaded"});
+                    this.state.onChange({status: "loaded", name: data.name});
                 } else {
-                    alert("Login was unsucessful")
+                    alert("Login was unsucessful");
                 }
             })
             .catch(err => console.log(err));
@@ -34,7 +37,7 @@ export default class LoginPresetUtil extends React.Component {
     render(){
         return (
             <div>
-                <DialogUtil onChange={this.login} title={"Login"} name1={"Name"} name2={"Password"} endButton={"Login"} cancelButton={false}/>
+                <DialogUtil onChange={this.login} title={"Login"} name1={"name"} name2={"password"} endButton={"Login"} cancelButton={false}/>
             </div>
         );
     }

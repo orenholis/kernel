@@ -14,6 +14,10 @@ export default class ContainerUtil extends React.Component {
     render() {
         return (
             <div>
+                {this.state.mode === "standart" ?
+                    <ModeStandart children={this.props.children} link={this.props.link}/> :
+                    null
+                }
                 {this.state.mode === "boxes" ?
                     <ModeBoxes children={this.props.children} link={this.props.link} class={this.props.class} pictureLink={this.props.pictureLink}/> :
                     null
@@ -30,6 +34,26 @@ export default class ContainerUtil extends React.Component {
                     </div> :
                     null
                 }
+            </div>
+        );
+    }
+}
+
+class ModeStandart extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className="container-util-mode-element">
+                <a href={this.props.link}>
+                    <p></p>
+                    <p>
+                        {this.props.children}
+                    </p>
+                    <p></p>
+                </a>
             </div>
         );
     }
@@ -53,7 +77,10 @@ class ModeBoxes extends React.Component {
                 <a href={this.state.link} className="container-util-mode-boxes-link">
                     <div className={this.state.class}>
                         <div className="container-util-mode-boxes-picture-all">
-                            <img className="container-util-mode-boxes-picture" src={this.props.pictureLink} />
+                            {this.props.pictureLink ?
+                                <img className="container-util-mode-boxes-picture" src={this.props.pictureLink} /> :
+                                <p className="container-util-mode-boxes-picture-text">{this.props.children}</p>
+                            }
                         </div>
                         <div className="container-util-mode-boxes-text-all">
                             <p className="container-util-mode-boxes-text">
@@ -86,7 +113,7 @@ class ModeTitle extends React.Component{
             return console.log("In container util with project text missing.");
         }
         this.setState({
-            mode: "content"
+           mode: "content"
         });
     }
 

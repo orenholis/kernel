@@ -29,7 +29,7 @@
     backdrop-filter: blur(40px);
     box-shadow: 0 25px 30px rgba(0, 0, 0, 0.05);
     color: white;
-    border-bottom: 2px solid #0000b3;
+    border-bottom: 3px solid #ec1c24;
     background: black;
 }
 
@@ -42,9 +42,13 @@
     margin: 0 auto;
 }
 
-.header-util-center > div {
-    width: 300px;
+.header-util-center > a {
+    flex: 1;
     font-size: 20px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
 }
 
 /** Footer */
@@ -61,13 +65,14 @@
 
 .footer-util-classic {
     width: 100%;
-    background: #737373;
+    background: black;
     position: relative;
     left: 0;
     bottom: 0;
     right: 0;
     margin: 0;
-    border-top: 2px solid #0000b3;
+    border-top: 3px solid #ec1c24;
+    color: white;
 }
 
 .footer-util-center {
